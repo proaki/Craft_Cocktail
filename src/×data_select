@@ -1,0 +1,199 @@
+    // const Random_choice = Cocktails.map((tn, index) => {
+    //         return (
+    //             <ul key={index.toString()}>
+    //                 <li>
+    //                     {tn.cocktail_name}  
+    //                 </li>
+    //                 <li>
+    //                     {tn.taste_name}  
+    //                 </li>
+    //                 <li>
+    //                     {tn.recipe_desc}  
+    //                 </li> 
+    //             </ul>           
+    //         )            
+    //         })
+            
+ 
+ 
+ 
+ 
+ 
+ // ダイアログに表示はされるが、配列の一番最後（19番目）しか表示されない
+
+                
+                // const target = ["中口"];
+                // var result = {};
+
+          // ①  
+                // for(var item in Cocktails){
+                //   for(var subItem in Cocktails[item]){
+                //     console.log(item + ":"  + Cocktails[item][subItem])
+                //     // setOption(Cocktails[item][subItem])
+                // }}
+
+                // "console.log"
+                //  19:モスコ・ミュール
+                //  19:Moscow Mule
+                //  19:ウォッカ
+                //  19:ビルド
+                //  19:中口
+                //  19:ロング
+                //  19:11
+                //  19:オール
+                //  19:タンブラー
+                //  19:アルコール
+                //  19:アメリカで流行した「モスクワのラバ」
+                //  19:ラバのひと蹴りと呼ばれる、ウォッカとジンジャーエールとライムのさっぱりとした飲みやすいカクテル。辛口のジンジャーエールでよりピリッとした味わいに。
+                //  19:グラスに氷を入れてウォッカとコーディアル・ライム・ジュース注ぎ、その後ジンジャーエールでグラスを満たし、軽くステア（混ぜる）する。
+
+                // "setOption"
+                // 配列の最後の要素だけ表示される（datasetの最後の要素は複雑なjson形式のため、dataset2を使わないと[object][object]が表示される）
+
+
+
+          // ②
+                // for(var item in Cocktails){
+                //   for(var subItem in Cocktails[item]){
+                //     console.log(item + ":"  + Cocktails[item][subItem]["taste_name"])
+                // }}
+
+                // 0:undefined
+                // 1:undefined
+                // 2:undefined
+
+
+
+          // ③ ⇒一番理想形に近い！！
+                // for(var item in Cocktails){                    
+                //   console.log(item + ":" + Cocktails[item]["cocktail_name"] + ":" + Cocktails[item]["taste_name"])
+                //   setOption(item + ":" + Cocktails[item]["cocktail_name"] + ":" + Cocktails[item]["taste_name"])
+                // }
+
+                // "console.log"
+                // 0:マティーニ:辛口
+                // 1:テキーラ・サンライズ:中甘口
+                // 2:ジン・トニック:中辛口
+                // .....
+
+                // "setOption"
+                // 19:モスコ・ミュール:中口
+                // ⇒配列の最後の要素だけ表示される
+
+
+
+
+          // ④
+                // for(var item of Cocktails){                   
+                //   console.log(item)
+                // }
+
+                // "console.log"
+                // {cocktail_id: 1, cocktail_name: 'マティーニ', cocktail_name_english: 'Martini', base_name: 'ジン', technique_name: 'ステア', …}
+                // alcohol: 42
+                // base_name: "ジン"
+                // cocktail_desc: "ジンの辛味とドライベルモットの香りが絶妙なカクテルの王様。時代が進むにつれ辛口へと変化している。使用するお酒の種類や配合が無数にあるため、バーによって味が異なると言われている。カクテル好きなら1度は味わっておきたい一杯。"
+                // cocktail_digest: "カクテルの王様"
+                // cocktail_id: 1
+                // cocktail_name: "マティーニ"
+                // cocktail_name_english: "Martini"
+                // glass_name: "カクテルグラス"
+                // recipe_desc: "ジンとドライベルモットをミキシンググラスでステアし、グラスに注ぐ。オリーブをカクテルピックに刺して沈め、仕上げにレモンピールをふる。"
+                // recipes: (4) [{…}, {…}, {…}, {…}]
+                // style_name: "ショート"
+                // taste_name: "辛口"
+                // technique_name: "ステア"
+                // top_name: "食前"
+                // type_name: "アルコール"
+                // [[Prototype]]: Object
+
+                // "setOption"
+                // 何も表示されない
+
+
+                // ⑤
+                
+                //   for(var item of Cocktails){                    
+                //   console.log(item["taste_name"] + item["cocktail_name"])
+                // }
+                // setOption(item["taste_name"] + item["cocktail_name"])
+                
+                // "console.log"
+                // 辛口マティーニ
+                // 中甘口テキーラ・サンライズ
+                // ...
+                // 中口ブルドッグ
+                // 中口モスコ・ミュール
+
+                // "setOption"
+                // 中口モスコ・ミュール
+                // ⇒最後の要素だけ表示される
+
+
+
+                // ⇒⇒⇒ ③ or ⑤のどちらかを使いたい。
+                // ・問題点：どちらもsetOptionで、最後の要素しか表示されない。(console.logでは全要素が表示される)
+
+
+
+
+
+
+
+
+                 // setOption(item + ":" + Cocktails[item]["cocktail_name"] + ":" + Cocktails[item]["taste_name"])
+                  // setOption(item)
+                  // console.log(item)
+                  // console.log(item + ":" + Cocktails[item]["cocktail_name"] + ":" + Cocktails[item]["taste_name"])
+                  
+                
+                  // setOption(result);
+
+                // for(var item in Cocktails){
+                //   setOption(item + ":" + Cocktails[item]["cocktail_name"] + ":" + Cocktails[item]["taste_name"]
+                //   )}
+
+                //   console.log(item + ":" + Cocktails[item]["cocktail_name"] + ":" + Cocktails[item]["taste_name"])
+                // }
+
+                // for(var item in Cocktails){
+                //   for(var subItem in Cocktails[item]){
+                //   console.log(item + ":" + subItem + ":" + Cocktails[item][subItem])
+                // }}
+
+                
+                // const target = ["中口"];
+                // var result = {};
+                // for(var value of Object.keys(Random_choice)){
+                //     // 連想配列のキーと配列の値が一致するか検索
+                //     for(var i of target){
+                //         if(value == i){
+                //             result[value] = Random_choice[value]; // 連想配列に格納
+                //             break;
+                //         }
+                //     }
+                // }          
+                // console.log(i)
+
+
+
+
+                
+
+
+
+
+
+            // // const kari = ["辛口", "中口", "甘口"]
+            // const index = R.findIndex(n => n === "中口");   
+            // console.log(index); 
+
+            // const x = R.splice(index, 1);
+            // setSelected(index.slice().sort(() => { return Math.random() - 0.5; }).slice(0, 1));
+            // console.log(x);
+
+            // setOption(Object.keys(Random_choice).map((value, index) => {
+          //     return(
+          //         <option key={index} value={index}>{value}</option>
+          //     );
+          // }))
